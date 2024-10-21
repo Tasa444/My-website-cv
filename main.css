@@ -1,5 +1,6 @@
 :root {
-  --main-blue: rgb(212, 233, 245); /* Define the blue color using RGB */
+  --main-blue: rgb(113, 156, 197); /* Define the blue color using RGB */
+  --main-white: rgb(0, 0, 0);
 }
 
 html,
@@ -13,6 +14,7 @@ body {
 
 h1 {
   font-family: "Montserrat", sans-serif;
+  font-size: 4.5rem;
 }
 
 p {
@@ -84,7 +86,7 @@ nav {
 /* Hover effect for navigation items */
 .navLinks a:hover li {
   background-color: var(--main-blue); /* Change background to blue on hover */
-  color: white; /* Change text color to white on hover */
+  color: var(--main-white); /* Change text color to white on hover */
 }
 
 /* Contact link flushed right */
@@ -101,7 +103,7 @@ nav {
 
 .navContact a:hover li {
   background-color: var(--main-blue); /* Same hover effect for contact link */
-  color: white;
+  color: var(--main-white);
 }
 
 /*MAIN*/
@@ -134,8 +136,7 @@ nav {
   position: relative;
   left: -100%; /* Start off-screen */
   opacity: 0; /* Hidden initially */
-  transition: opacity 0.5s ease;
-  transition: left 1s ease;
+  transition: opacity 0.5s ease, left 3s ease, transform 0.3s ease;
 }
 
 /* Slide-in effect: image slides into place */
@@ -146,8 +147,12 @@ nav {
 
 /* Optional: You can also add smooth transitions to hover effects, if needed */
 .tasaImg:hover {
-  transition: transform 0.3s ease;
+  transition: transform 1s ease;
   transform: scale(1.05); /* Image zooms in a bit when hovered */
+}
+
+.mainText {
+  margin-top: 0;
 }
 
 /* Right side with text and buttons */
