@@ -1,3 +1,16 @@
+:root {
+  --main-blue: rgb(212, 233, 245); /* Define the blue color using RGB */
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 h1 {
   font-family: "Montserrat", sans-serif;
 }
@@ -5,6 +18,7 @@ h1 {
 p {
   font-family: "Montserrat", sans-serif;
 }
+
 /*HEADER*/
 
 .header {
@@ -12,7 +26,7 @@ p {
   display: flex; /* Make the header a flex container */
   justify-content: space-between; /* Optional: Space out the logo and nav */
   align-items: center; /* Vertically align the logo and nav */
-  padding: 1rem 1rem;
+  padding: 1rem 2rem;
 }
 
 #logo {
@@ -60,27 +74,56 @@ nav {
   margin-left: 2rem; /* Adds spacing between nav items */
 }
 
+.navLinks a li {
+  padding: 0.5rem 1rem; /* Set padding initially so it doesn't change on hover */
+  border-radius: 30px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for navigation items */
+/* Hover effect for navigation items */
+.navLinks a:hover li {
+  background-color: var(--main-blue); /* Change background to blue on hover */
+  color: white; /* Change text color to white on hover */
+}
+
 /* Contact link flushed right */
 .navContact {
   margin-left: auto; /* Pushes the contact link to the far right */
   list-style: none;
 }
 
+.navContact a li {
+  padding: 0.5rem 1rem; /* Same for contact link */
+  border-radius: 30px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navContact a:hover li {
+  background-color: var(--main-blue); /* Same hover effect for contact link */
+  color: white;
+}
+
 /*MAIN*/
 /* Main content split in 2 halves */
 .mainContent {
+  background-color: var(--main-blue);
   display: flex;
+  flex: 1;
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  gap: 3rem;
+  padding-top: 0;
+  gap: 0;
 }
 
 /* Left side with image */
 .left {
   flex: 1;
   display: flex;
-  justify-content: center; /* Center the image horizontally within the left side */
+  justify-content: flex-end; /* Aligns the image to the right of the left container */
+  align-items: center;
+  margin-left: 30rem;
 }
 
 .tasaImg {
@@ -88,6 +131,23 @@ nav {
   width: 35rem;
   border-radius: 50%; /* This makes the image round */
   object-fit: cover; /* Ensures the image covers the entire area without distortion */
+  position: relative;
+  left: -100%; /* Start off-screen */
+  opacity: 0; /* Hidden initially */
+  transition: opacity 0.5s ease;
+  transition: left 1s ease;
+}
+
+/* Slide-in effect: image slides into place */
+.tasaImg.slide-in {
+  left: 0; /* Final position: on-screen */
+  opacity: 1; /* Fully visible */
+}
+
+/* Optional: You can also add smooth transitions to hover effects, if needed */
+.tasaImg:hover {
+  transition: transform 0.3s ease;
+  transform: scale(1.05); /* Image zooms in a bit when hovered */
 }
 
 /* Right side with text and buttons */
@@ -97,22 +157,68 @@ nav {
   flex-direction: column;
   justify-content: center; /* Vertically center the content */
   text-align: left; /* Align the text to the left */
+  margin-left: 2rem;
+  margin-right: 30rem;
 }
 
 .right h1,
-.right p,
-.right a {
+.right p {
   margin-bottom: 1rem; /* Adds space between each element */
+}
+
+.right .buttonContainer {
+  display: flex; /* Display buttons in a line (horizontally) */
+  gap: 1rem; /* Adds space between buttons */
+  justify-content: flex-start; /* Aligns buttons to the left */
+}
+
+.buttonContainer {
+  margin-top: 1.5rem;
 }
 
 .edButton,
 .portButton,
 .skillButton {
-  padding: 10px 20px;
+  background-color: white;
+  padding: 1rem 2rem;
   border: none;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.5rem;
-  margin: 0.5rem;
-  border-radius: 12px;
+  font-size: 1rem;
+  border-radius: 30px;
+
+  color: black; /* Default text color */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for buttons */
+.edButton:hover,
+.portButton:hover,
+.skillButton:hover {
+  background-color: black; /* Change background to blue on hover */
+  color: white; /* Change text color to white on hover */
+}
+
+/*FOOTER*/
+
+footer {
+  padding: 2rem;
+  text-align: center; /* Center text inside footer */
+  margin-top: auto; /* Push the footer to the bottom */
+  width: 100%; /* Make sure the footer spans the full width */
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: center; /* Center all contact items in the middle */
+  gap: 2rem; /* Space between the contact items */
+}
+
+.contactItem {
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.contactItem a {
+  text-decoration: none;
 }
