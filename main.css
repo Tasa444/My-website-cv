@@ -24,17 +24,44 @@ p {
 /*HEADER*/
 
 .header {
+  background-color: white;
   font-family: "Montserrat", sans-serif;
   display: flex; /* Make the header a flex container */
   justify-content: space-between; /* Optional: Space out the logo and nav */
   align-items: center; /* Vertically align the logo and nav */
   padding: 1rem 2rem;
+  position: relative;
 }
 
-#logo {
+#logoDefault {
   height: 3rem;
   text-decoration: none;
   margin-right: auto; /* Ensures the logo is flushed to the left */
+}
+
+#logoHover {
+  opacity: 0; /* Start with the hover logo hidden */
+  position: absolute; /* Allow it to overlay the default logo */
+  top: 0; /* Align with the default logo */
+  left: 0; /* Align with the default logo */
+}
+
+.logo-container {
+  display: inline-block; /* Ensures the container only takes up as much space as necessary */
+  position: relative; /* Helps control the positioning of child elements */
+}
+
+.logo-container:hover #logoDefault {
+  opacity: 0; /* Hide the default logo on hover */
+}
+.logo-container:hover #logoHover {
+  opacity: 1; /* Show the hover logo on hover */
+}
+
+.logo {
+  height: 3rem; /* Consistent height for both logos */
+  width: auto; /* Maintain aspect ratio */
+  transition: opacity 0.5s ease;
 }
 
 a {
@@ -130,10 +157,12 @@ nav {
 }
 
 .tasaImg {
-  height: 35rem;
-  width: 35rem;
-  border-radius: 50%; /* This makes the image round */
-  object-fit: cover; /* Ensures the image covers the entire area without distortion */
+  width: 100%; /* Use a percentage if inside a container */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 35rem; /* Limit the width */
+  max-height: 35rem; /* Limit the height */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensure the image covers the area */
   position: relative;
   left: -100%; /* Start off-screen */
   opacity: 0; /* Hidden initially */
@@ -185,7 +214,7 @@ nav {
 .edButton,
 .portButton,
 .skillButton {
-  background-color: white;
+  background-color: black;
   padding: 1rem 2rem;
   border: none;
   cursor: pointer;
@@ -193,7 +222,7 @@ nav {
   font-size: 1rem;
   border-radius: 30px;
 
-  color: black; /* Default text color */
+  color: white; /* Default text color */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -201,13 +230,14 @@ nav {
 .edButton:hover,
 .portButton:hover,
 .skillButton:hover {
-  background-color: black; /* Change background to blue on hover */
-  color: white; /* Change text color to white on hover */
+  background-color: white; /* Change background to blue on hover */
+  color: black; /* Change text color to white on hover */
 }
 
 /*FOOTER*/
 
 footer {
+  background-color: white;
   padding: 2rem;
   text-align: center; /* Center text inside footer */
   margin-top: auto; /* Push the footer to the bottom */
@@ -227,4 +257,164 @@ footer {
 
 .contactItem a {
   text-decoration: none;
+}
+
+/*CONTACT*/
+
+.bodyContact {
+  background-color: black;
+}
+
+/* Keep logo and text side by side */
+.logoTextContainer {
+  display: flex;
+  align-items: center; /* Vertically center the logo and text */
+  justify-content: center; /* Center them horizontally */
+  gap: 1rem; /* Add space between logo and text */
+}
+
+.contactContainer {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 7rem;
+}
+
+/* Specific style for .textContact with higher specificity */
+.contactContainer .textContact {
+  color: white;
+  margin: 0;
+  font-family: "Playfair Display", serif; /* Ensure Playfair Display font */
+  font-weight: bold;
+  font-size: 10rem;
+  margin-left: 1rem; /* Add space between logo and text */
+}
+
+.contactContainer p,
+.contactContainer a {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+.contactContainer a {
+  color: var(--main-blue);
+  text-decoration: none;
+}
+
+.logoContact {
+  margin-top: 1rem;
+  width: 8.5rem;
+  position: relative; /* Allows control over the logo's position */
+  left: -100%; /* Initially off-screen */
+  transition: left 1.5s ease; /* Smooth slide-in transition */
+}
+
+/* CSS class that will be added via JavaScript to trigger the animation */
+.logo-slide-in {
+  left: 0; /* Final position: center of the screen */
+}
+
+/*PORTFOLIO*/
+
+.portfolioHeader {
+  margin-bottom: 8rem;
+  background-color: white;
+  font-family: "Montserrat", sans-serif;
+  display: flex; /* Make the header a flex container */
+  justify-content: space-between; /* Optional: Space out the logo and nav */
+  align-items: center; /* Vertically align the logo and nav */
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+/* General container styling for centering */
+.container {
+  display: flex; /* Center the items horizontally */
+  justify-content: center;
+  gap: 1.5rem; /* Add space between items in a row */
+  margin: 2rem 0; /* Add vertical spacing between the rows */
+}
+
+.logosContainer,
+.digitalArtContainer,
+.animalPaintingContainer,
+.muralContainer,
+.artContainer {
+  text-align: center; /* Center the titles and rows */
+  margin-bottom: 1rem; /* Add some space below each section */
+}
+
+.logoPortfolioContainer,
+.digitalArtContainer .artRow,
+.animalPaintingContainer .artRow,
+.muralContainer .artRow,
+.artContainer .artRow {
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center the items */
+  flex-wrap: wrap; /* Allow items to wrap to next line if necessary */
+}
+
+.digitalArtContainer img,
+.animalPaintingContainer img,
+.muralContainer img,
+.artContainer img {
+  max-width: 60rem; /* Increase the maximum width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin: 1rem; /* Margin between images to avoid squishing */
+  object-fit: cover;
+}
+
+.rowTitle {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem; /* Adjust the size as needed */
+  text-align: center; /* Center align the title */
+  margin: 0.5rem 0; /* Further reduced margin for closer stacking */
+  cursor: pointer; /* Change the cursor to a pointer when hovering */
+  padding: 0; /* Remove padding to avoid extra space */
+}
+
+/* Logo Portfolio Container */
+.logoPortfolioContainer {
+  display: flex; /* Ensure flex display */
+  justify-content: center; /* Center the items */
+  gap: 2rem; /* Increased gap for more space between logos */
+  margin: 2rem 0; /* Existing margin for spacing */
+}
+
+.logoPortfolioContainer img {
+  max-width: 10%; /* Adjust as needed for logo size */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 20rem; /* Limit height to prevent stretching */
+}
+
+/* Common Image Styles */
+img {
+  max-width: 100%; /* Ensure responsiveness for all images */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.digitalArtContainer img,
+.animalPaintingContainer img,
+.artContainer img {
+  max-height: 500px; /* Limit height for these images */
+  margin-left: 2rem; /* Add left margin */
+  margin-right: 2rem; /* Add right margin */
+}
+
+.muralContainer img {
+  max-height: 400px; /* Limit height for these images */
+}
+
+/* Logos specific margin */
+.catfeLogo,
+.trivinLogo,
+.nordicLogo,
+.frankoLogo {
+  margin-left: 2rem;
+  margin-right: 2rem; /* Redundant with the flex gap */
 }

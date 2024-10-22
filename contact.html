@@ -20,11 +20,18 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body class="bodyContact">
     <header class="header">
-      <a href="index.html"
-        ><img id="logo" src="img/logob.png" alt="My Logo"
-      /></a>
+      <a href="index.html" class="logo-container">
+        <!-- Add a class for the logo container -->
+        <img id="logoDefault" class="logo" src="img/logob.png" alt="My Logo" />
+        <img
+          id="logoHover"
+          class="logo"
+          src="img/logo.png"
+          alt="My Hover Logo"
+        />
+      </a>
 
       <nav>
         <div class="navLinks">
@@ -50,6 +57,17 @@
         </div>
       </nav>
     </header>
+    <div class="contactContainer">
+      <div class="logoTextContainer">
+        <img class="logoContact" src="img/logo.png" alt="logo" />
+        <p class="textContact">RIŽNAR</p>
+      </div>
+      <p>Phone: <b>07 357 942 74</b></p>
+      <p>Email: <b>tasa.kriznar44@gmail.com</b></p>
+      <a href="https://www.linkedin.com/in/ta%C5%A1a-kri%C5%BEnar-846a95333/"
+        ><b>LinkedIn</b></a
+      >
+    </div>
     <footer>
       <div class="footerContainer">
         <div class="contactItem">
