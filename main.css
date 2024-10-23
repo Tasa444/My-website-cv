@@ -373,9 +373,28 @@ footer {
   font-family: "Playfair Display", serif;
   font-size: 1.5rem; /* Adjust the size as needed */
   text-align: center; /* Center align the title */
-  margin: 0.5rem 0; /* Further reduced margin for closer stacking */
+  margin: 0.5rem auto; /* Center the title with auto margins */
   cursor: pointer; /* Change the cursor to a pointer when hovering */
-  padding: 0; /* Remove padding to avoid extra space */
+  padding: 0.5rem 1rem; /* Add padding to create space around the text */
+  background-color: transparent; /* Initial background is transparent */
+  border-radius: 30px; /* Fully rounded corners */
+  transition: background-color 0.5s ease; /* Smooth transition for background color */
+  display: inline-block; /* Make the background wrap around the text */
+}
+
+.rowTitle a {
+  color: inherit; /* Inherit the text color from the parent */
+  text-decoration: none; /* Remove underline from the link */
+  transition: color 0.5s ease; /* Smooth transition for text color */
+}
+
+/* Hover effect for the row titles */
+.rowTitle:hover {
+  background-color: black; /* Change background to black on hover */
+}
+
+.rowTitle:hover a {
+  color: white; /* Change text color to white on hover */
 }
 
 /* Logo Portfolio Container */
