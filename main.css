@@ -418,3 +418,20 @@ img {
   margin-left: 2rem;
   margin-right: 2rem; /* Redundant with the flex gap */
 }
+
+/*LOGOO DETAILED*/
+
+.logoPortfolioContainer img {
+  width: 200px; /* Set a specific width */
+  height: auto; /* Maintain aspect ratio */
+  max-width: none; /* Override any conflicting max-width styles */
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.logoPortfolioContainer img:hover {
+  transform: scale(1.1); /* Slightly increase the size (110%) on hover */
+}
+
+.logoPortfolioContainer img {
+  transform: scale(1); /* Reset to original size when not hovered */
+}
