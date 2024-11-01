@@ -519,3 +519,86 @@ img {
   display: list-item; /* Default for list items, ensuring vertical alignment */
   margin-bottom: 0.5rem;
 }
+
+/* Container for both languages and skills */
+.skillsLanguagesContainer {
+  display: flex; /* Use Flexbox for layout */
+  justify-content: space-between; /* Place items at the left and right */
+  align-items: flex-start; /* Align items at the top */
+  gap: 40px; /* Gap between the containers */
+  max-width: 1200px; /* Max width for responsiveness */
+  margin: 0 auto; /* Center the main container */
+  margin-right: 46rem;
+  margin-top: 6rem;
+}
+
+/* SKILLS */
+.languagesContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the contents vertically */
+  align-items: center;
+  gap: 1rem; /* Space between each language row */
+  text-align: center;
+}
+
+.languagesContainer h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* Style each language row */
+.languagesContainer div {
+  display: flex;
+  justify-content: space-between; /* Separate text and image to left and right */
+  width: 300px; /* Adjust width as needed */
+  align-items: center; /* Aligns text and image vertically */
+}
+
+/* Text styling for right alignment */
+.languagesContainer p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  margin: 0;
+  text-align: right; /* Align text to the right */
+  flex-grow: 1; /* Pushes text to the right side */
+}
+
+/* Image styling to match text height and align to the left */
+.languagesContainer img {
+  height: 1.5rem; /* Match text height */
+  width: auto; /* Maintain aspect ratio */
+  margin-left: 1rem; /* Add spacing between text and image */
+}
+
+.skillsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.skillsContainer h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.skillsContainer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-aligns the list */
+  width: 100%;
+}
+
+.skillsContainer li {
+  display: block; /* Ensures each item is treated as a block element */
+  width: 100%; /* Makes each item take up the full container width */
+  text-align: center;
+  font-size: 1rem;
+  margin: 5px 0;
+}
